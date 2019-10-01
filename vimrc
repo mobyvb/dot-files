@@ -9,4 +9,9 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'scrooloose/nerdtree'
 call plug#end()
+
+map <C-n> :NERDTreeToggle<CR> " toggle nerdtree with ctrl+n
+let g:NERDTreeDirArrowExpandable = '🙂'
+let g:NERDTreeDirArrowCollapsible = '😮'
