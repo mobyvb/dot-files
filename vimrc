@@ -25,3 +25,24 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " show hidden files in nerdtree
 let NERDTreeShowHidden=1
 
+" Tab options
+let g:myTabSize = 4 " Set myTabSize var to use below
+let &shiftwidth = myTabSize " Tell vim how many columns is a tab
+let &softtabstop = myTabSize " Tab and delete this many columns
+let &tabstop = myTabSize " Actual hard tabstops will be my tab size
+set expandtab " Make tabs be spaces
+set autoread " Always reload a file when it has changed instead of asking -- only works on gvim
+set autoindent
+set number " Line numbers
+set mouse=a " Allow mouse scrolling, other mouse events
+set clipboard=unnamed,unnamedplus " Always yank to and from the system clipboard
+set ignorecase
+set smartcase " Smartcase in search
+set cursorline " Show current line highlighted
+set incsearch " show search matches as you type
+set termguicolors "use native true colors (only supported starting vim v8)
+set nowrap " don't wrap text
+set backspace=2 " Backspace works as normal -- actually moves cursor back and deletes
+set tags=tags; " Tell vim to look for tags recursively downwards
+set nostartofline " Keeps the cursor in its last spot when changing buffers (prevents it from going to start of line)
+
