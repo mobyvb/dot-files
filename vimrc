@@ -15,6 +15,7 @@ Plug 'Valloric/YouCompleteMe', {'do': './install.py'} " autocomplete
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive' " git support
 Plug 'morhetz/gruvbox'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 set updatetime=250 " how long (ms) after you stop typing vim refreshes things, used by vim-gitgutter and other plugins
@@ -62,3 +63,5 @@ let g:gruvbox_italic=0
 let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 
+" Go options
+let g:go_fmt_command = "goimports" " run goimports on save
