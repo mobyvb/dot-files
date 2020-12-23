@@ -1,8 +1,8 @@
 " Install plugin system (not necessary if already setup)
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+       silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+               \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+       autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Setup plugins
@@ -41,6 +41,7 @@ set autoread " Always reload a file when it has changed instead of asking -- onl
 set autoindent
 set number " Line numbers
 set mouse=a " Allow mouse scrolling, other mouse events
+" `sudo apt-get install vim-gtk` for clipboard to work on Ubuntu
 set clipboard=unnamed,unnamedplus " Always yank to and from the system clipboard
 set ignorecase
 set smartcase " Smartcase in search
