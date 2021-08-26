@@ -20,6 +20,9 @@ call plug#end()
 
 set updatetime=250 " how long (ms) after you stop typing vim refreshes things, used by vim-gitgutter and other plugins
 
+" open doc files in vim
+autocmd BufReadPost *.doc,*.docx,*.rtf,*.odp,*.odt silent %!pandoc "%" -tplain -o /dev/stdout
+
 " toggle nerdtree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 " default nerdtree v and > arrows
