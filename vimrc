@@ -16,6 +16,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive' " git support
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 set updatetime=250 " how long (ms) after you stop typing vim refreshes things, used by vim-gitgutter and other plugins
@@ -44,6 +45,7 @@ let &tabstop = myTabSize " Actual hard tabstops will be my tab size
 set expandtab " Make tabs be spaces
 set autoread " Always reload a file when it has changed instead of asking -- only works on gvim
 set autoindent
+set scrolloff=3 " space between cursor and bottom/top before scroll
 set number " Line numbers
 set mouse=a " Allow mouse scrolling, other mouse events
 " `sudo apt-get install vim-gtk` for clipboard to work on Ubuntu
@@ -57,16 +59,26 @@ set nowrap " don't wrap text
 set backspace=2 " Backspace works as normal -- actually moves cursor back and deletes
 set tags=tags; " Tell vim to look for tags recursively downwards
 set nostartofline " Keeps the cursor in its last spot when changing buffers (prevents it from going to start of line)
+" move vertically by visual line with j and k
+nnoremap j gj
+nnoremap k gk
+
+"Get the 2-space YAML as the default when hit carriage return after the colon
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 """"""""""" View options
 set linespace=3 " Line space
 syntax on
-set background=dark
+set background=light
+
+set splitbelow
+set splitright
 
 " Options for morhetz/gruvbox
 let g:gruvbox_bold=0
 let g:gruvbox_italic=0
 let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_light="soft"
 colorscheme gruvbox
 
 " Go options
